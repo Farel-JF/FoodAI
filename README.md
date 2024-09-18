@@ -61,5 +61,63 @@
 ### Steps:
 1. Clone the repository:
    ```bash
-   git clone https://github.com/Farel-C23/FoodAI.git
-   cd FoodAI
+      git clone https://github.com/Farel-C23/FoodAI.git
+      cd FoodAI
+
+2.Install dependencies:
+   ```bash
+      npm install
+
+3. Setup the database:
+Install MySQL and MongoDB.
+Configure the database connection strings in the .env file.
+Run the development server:
+
+Install dependencies:
+bash
+Copy code
+npm install
+Setup the database:
+Install MySQL and MongoDB.
+Configure the database connection strings in the .env file.
+Run the development server:
+bash
+Copy code
+npm run dev
+Deploy (AWS recommended):
+Set up AWS EC2 for hosting.
+Use a CI/CD pipeline like GitHub Actions or Jenkins for automated deployments.
+Risks & Limitations
+Technical Risks:
+AI Model Accuracy: Continuous training and testing to ensure accurate product recommendations.
+Data Security: Use encryption and comply with regulations like GDPR and CCPA.
+Platform Downtime: Implement failover mechanisms and regular backups.
+Non-Technical Risks:
+User Engagement: Ensure adoption through user research, feedback, and marketing campaigns.
+Supply Chain: Maintain a diverse supplier base to prevent product shortages.
+Roadmap
+Phase 1: Build core functionality (AI recommendations, e-commerce).
+Phase 2: Implement user profiles and product tracking.
+Phase 3: Launch marketing campaigns and gather user feedback.
+Contributing
+This project is currently managed solely by Farel Jumelaisbakoume. However, contributions are welcome. Please follow these steps for contributing:
+
+Fork the repository.
+Create a new branch (feature/your-feature-name).
+Submit a pull request.
+License
+This project is licensed under the MIT License.
+
+less
+Copy code
+
+### Notes:
+- I added sections, formatting, and emphasis to make the content more readable.
+- I used markdown features like code blocks, headings, and horizontal lines to make the document more visually appealing on GitHub.
+
+This will give your README a professional and organized look!
+
+
+
+
+

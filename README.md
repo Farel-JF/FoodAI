@@ -81,7 +81,9 @@
 5.Deploy (AWS recommended):
 - Set up AWS EC2 for hosting.
 - Use a CI/CD pipeline like GitHub Actions or Jenkins for automated deployments.
-  
+
+---
+
 ## Risks & Limitations
 
 ### Technical Risks:

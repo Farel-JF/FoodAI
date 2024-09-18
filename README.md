@@ -1,5 +1,5 @@
 # FoodAI
-                                                                        ![Capture d'écran 2024-08-28 224932](https://github.com/user-attachments/assets/18156db5-4d61-4d40-8ae5-9cfe6e289cb0)
+  ![Capture d'écran 2024-08-28 224932](https://github.com/user-attachments/assets/18156db5-4d61-4d40-8ae5-9cfe6e289cb0)
 
 FoodAI: Nutrition Meets Technology for Your Fitness Success
 Overview

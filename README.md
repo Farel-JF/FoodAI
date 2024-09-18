@@ -1,4 +1,6 @@
 # FoodAI
+![Capture d'écran 2024-08-28 224932](https://github.com/user-attachments/assets/18156db5-4d61-4d40-8ae5-9cfe6e289cb0)
+
 FoodAI: Nutrition Meets Technology for Your Fitness Success
 Overview
 FoodAI is a web platform designed to help gym-goers and fitness enthusiasts select nutritional products aligned with their fitness goals. The platform combines e-commerce functionality with AI-powered recommendations to suggest personalized products like protein supplements, meals, and drinks based on users' fitness objectives.

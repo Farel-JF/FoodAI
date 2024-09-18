@@ -94,11 +94,15 @@
 ### Non-Technical Risks:
 - User Engagement: Ensure adoption through user research, feedback, and marketing campaigns.
 - Supply Chain: Maintain a diverse supplier base to prevent product shortages.
+  
+---
 
 ## Roadmap
 1. Phase 1: Build core functionality (AI recommendations, e-commerce).
 2. Phase 2: Implement user profiles and product tracking.
 3. Phase 3: Launch marketing campaigns and gather user feedback.
+
+--
 
 ## Contributing
 This project is currently managed solely by Farel Jumelaisbakoume. However, contributions are welcome. Please follow these steps for contributing:
@@ -106,6 +110,8 @@ This project is currently managed solely by Farel Jumelaisbakoume. However, cont
 1. Fork the repository.
 2. Create a new branch (feature/your-feature-name).
 3. Submit a pull request.
+
+--
 
 ## License
 

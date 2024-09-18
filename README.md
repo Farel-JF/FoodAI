@@ -102,7 +102,7 @@
 2. Phase 2: Implement user profiles and product tracking.
 3. Phase 3: Launch marketing campaigns and gather user feedback.
 
---
+---
 
 ## Contributing
 This project is currently managed solely by Farel Jumelaisbakoume. However, contributions are welcome. Please follow these steps for contributing:
@@ -111,7 +111,7 @@ This project is currently managed solely by Farel Jumelaisbakoume. However, cont
 2. Create a new branch (feature/your-feature-name).
 3. Submit a pull request.
 
---
+---
 
 ## License
 

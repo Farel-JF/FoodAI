@@ -71,27 +71,27 @@
    ```
 
 3. Setup the database:
-- **Install MySQL and MongoDB.
-- **Configure the database connection strings in the .env file.
+- Install MySQL and MongoDB.
+- Configure the database connection strings in the .env file.
 
 4.Run the development server:
    ```bash
       npm run dev
    ```
 5.Deploy (AWS recommended):
-- **Set up AWS EC2 for hosting.
-- **Use a CI/CD pipeline like GitHub Actions or Jenkins for automated deployments.
+- Set up AWS EC2 for hosting.
+- Use a CI/CD pipeline like GitHub Actions or Jenkins for automated deployments.
   
 ## Risks & Limitations
 
 ### Technical Risks:
-- **AI Model Accuracy: Continuous training and testing to ensure accurate product recommendations.
-- **Data Security: Use encryption and comply with regulations like GDPR and CCPA.
-- **Platform Downtime: Implement failover mechanisms and regular backups.
+- AI Model Accuracy: Continuous training and testing to ensure accurate product recommendations.
+- Data Security: Use encryption and comply with regulations like GDPR and CCPA.
+- Platform Downtime: Implement failover mechanisms and regular backups.
 
 ### Non-Technical Risks:
-- **User Engagement: Ensure adoption through user research, feedback, and marketing campaigns.
-- **Supply Chain: Maintain a diverse supplier base to prevent product shortages.
+- User Engagement: Ensure adoption through user research, feedback, and marketing campaigns.
+- Supply Chain: Maintain a diverse supplier base to prevent product shortages.
 
 ## Roadmap
 1. Phase 1: Build core functionality (AI recommendations, e-commerce).

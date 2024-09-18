@@ -1,8 +1,8 @@
-# FoodAI
+# Food<span style="color:green">AI</span>
 <div align="center">
   <img src="https://github.com/user-attachments/assets/18156db5-4d61-4d40-8ae5-9cfe6e289cb0" alt="FoodAI Screenshot" />
 </div>
-**Food<span style="color:green">AI</span>** is a web platform designed to help gym-goers and fitness enthusiasts select nutritional products aligned with their fitness goals. It combines e-commerce functionality with AI-powered recommendations to suggest personalized products like protein supplements, meals, and drinks based on users' fitness objectives.
+
 ## Nutrition Meets Technology for Your Fitness Success
 
 **FoodAI** is a web platform designed to help gym-goers and fitness enthusiasts select nutritional products aligned with their fitness goals. It combines e-commerce functionality with AI-powered recommendations to suggest personalized products like protein supplements, meals, and drinks based on users' fitness objectives.

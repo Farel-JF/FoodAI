@@ -108,10 +108,11 @@ This project is currently managed solely by Farel Jumelaisbakoume. However, cont
 ## License
 
 This project is licensed under the MIT License.
+   ```less
 ### Notes:
 - I added sections, formatting, and emphasis to make the content more readable.
 - I used markdown features like code blocks, headings, and horizontal lines to make the document more visually appealing on GitHub.
 
 This will give your README a professional and organized look!
-
+   ```
 

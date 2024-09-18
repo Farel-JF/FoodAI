@@ -1,5 +1,7 @@
 # FoodAI
-![FoodAI Screenshot](https://github.com/user-attachments/assets/18156db5-4d61-4d40-8ae5-9cfe6e289cb0)
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/18156db5-4d61-4d40-8ae5-9cfe6e289cb0" alt="FoodAI Screenshot" />
+</div>
 
 ## Nutrition Meets Technology for Your Fitness Success
 

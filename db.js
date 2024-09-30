@@ -1,38 +1,48 @@
-// Importer MongoClient depuis le package mongodb
-const { MongoClient } = require('mongodb');
+// Importer le module mysql2
+const mysql = require('mysql2/promise');
 
-// URL de connexion (par défaut, MongoDB écoute sur localhost:27017)
-const url = 'mongodb://localhost:27017';
+// Paramètres de connexion à la base de données MySQL
+const connectionConfig = {
+  host: 'localhost',
+  user: 'root', // Remplace 'root' par ton nom d'utilisateur MySQL
+  password: '', // Remplace par ton mot de passe MySQL
+  database: 'ma_base_de_donnees' // Nom de la base de données que tu veux utiliser
+};
 
-// Nom de la base de données
-const dbName = 'ma_base_de_donnees';
-
-// Fonction principale pour se connecter à MongoDB et insérer des données
+// Fonction principale pour se connecter à MySQL et insérer des données
 async function main() {
-  // Créer un nouveau client MongoDB
-  const client = new MongoClient(url);
+  let connection;
 
   try {
-    // Se connecter au serveur MongoDB
-    await client.connect();
-    console.log("Connecté à MongoDB avec succès");
+    // Se connecter à MySQL
+    connection = await mysql.createConnection(connectionConfig);
+    console.log("Connecté à MySQL avec succès");
 
-    // Sélectionner la base de données (elle sera créée si elle n'existe pas)
-    const db = client.db(dbName);
+    // Créer une table si elle n'existe pas déjà
+    const createTableQuery = `
+      CREATE TABLE IF NOT EXISTS ma_table (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        nom VARCHAR(50),
+        age INT,
+        profession VARCHAR(50)
+      )
+    `;
+    await connection.execute(createTableQuery);
+    console.log("Table 'ma_table' vérifiée/créée avec succès");
 
-    // Sélectionner la collection (elle sera créée si elle n'existe pas)
-    const collection = db.collection('ma_collection');
+    // Insérer un document (équivalent à une ligne dans une table SQL)
+    const insertQuery = `
+      INSERT INTO ma_table (nom, age, profession)
+      VALUES (?, ?, ?)
+    `;
+    const [result] = await connection.execute(insertQuery, ['Farel', 25, 'Développeur']);
 
-    // Insérer un document (équivalent à une ligne dans une base SQL)
-    const document = { nom: "Farel", age: 25, profession: "Développeur" };
-    const result = await collection.insertOne(document);
-
-    console.log("Document inséré avec succès :", result.insertedId);
+    console.log("Document inséré avec succès, ID :", result.insertId);
   } catch (err) {
-    console.error("Erreur lors de la connexion à MongoDB :", err);
+    console.error("Erreur lors de la connexion à MySQL :", err);
   } finally {
     // Fermer la connexion
-    await client.close();
+    if (connection) await connection.end();
   }
 }
 

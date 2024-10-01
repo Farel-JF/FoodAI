@@ -305,3 +305,121 @@ header h1 a:hover {
     margin-right: 20px;
     vertical-align: left;
 }
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif; /* Use a clean, modern font */
+}
+
+body {
+    background-color: #f4f4f4; /* Light background color */
+    color: #333; /* Dark text color */
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+header {
+    background-color: #50b3a2; /* Green header */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header .logo {
+    width: 100px; /* Adjust logo size */
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.login-container {
+    margin-top: 15px;
+}
+
+.btn {
+    background-color: #FFD700; /* Gold button */
+    color: #333;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: #FFC300; /* Lighter gold on hover */
+}
+
+main {
+    padding: 20px 0;
+}
+
+.hero-image {
+    width: 100%; /* Make hero image responsive */
+    height: auto;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+}
+
+h2 {
+    margin: 20px 0;
+}
+
+form {
+    background-color: #fff; /* White background for form */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc; /* Light border */
+}
+
+footer {
+    background-color: #333; /* Dark footer */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+}
+
+footer ul {
+    list-style-type: none;
+}
+
+footer ul li {
+    margin: 5px 0;
+}

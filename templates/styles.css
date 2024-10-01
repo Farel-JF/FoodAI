@@ -257,3 +257,51 @@ header h1 a:hover {
     color: #ffffff; /* Change la couleur au survol (ajuste selon tes besoins) */
 }
 
+.product-link {
+    color: black; /* Change text color to black */
+    text-decoration: none; /* Remove underline */
+}
+
+.product-link:hover {
+    text-decoration: underline; /* Underline on hover for better UX */
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+.product-detail {
+    display: flex;
+    margin-top: 20px;
+}
+
+.product-detail img {
+    max-width: 100%;
+    height: auto;
+}
+
+.product-info {
+    margin-left: 20px;
+}
+
+.product-info h3 {
+    margin-top: 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.logo {
+    width: 50px; /* Ajustez la taille selon vos préférences */
+    height: auto;
+    margin-right: 20px; /* Espace entre le logo et le titre */
+    vertical-align: middle; /* Aligne le logo verticalement avec le texte */
+}

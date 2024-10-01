@@ -1,3 +1,14 @@
+CREATE DATABASE FoodAI;
+USE FoodAI;
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
 CREATE TABLE `FoodAI`.`Orders` (
   `Order_id` INT NOT NULL,
   `User_id` INT NOT NULL,

@@ -6,7 +6,7 @@ connection_config = {
     'host': 'localhost',
     'user': 'root',  # Remplace 'root' par ton nom d'utilisateur MySQL
     'password': '1234',  # Remplace par ton mot de passe MySQL
-    'database': 'ma_base_de_donnees'  # Nom de la base de données que tu veux utiliser
+    'database': 'FoodAI'  # Nom de la base de données que tu veux utiliser
 }
 
 def main():

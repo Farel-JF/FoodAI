@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FoodAI - Contact Us</title>
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <h1><a href="index.html">FoodAI</a></h1>
+            <p>Nutrition Meets Technology for Your Fitness Success</p>
+        </div>
+    </header>
+
+    <!-- Contact Form Section -->
+    <section id="contact" class="container">
+        <div class="contact-box">
+            <h2>Contact Us</h2>
+            <form action="contact_process.php" method="POST">
+                <!-- Name Input -->
+                <div class="input-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <!-- Email Input -->
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <!-- Message Input -->
+                <div class="input-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="container">
+        <p>&copy; 2024 FoodAI. All Rights Reserved.</p>
+        <ul><li>Email: support@foodai.com</li>
+            <li>Phone: (+33) 0661516641</li>
+        </ul>
+
+    </footer>
+</body>
+</html>

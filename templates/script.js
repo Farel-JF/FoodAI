@@ -1,9 +1,9 @@
-// Create a function to generate and insert the HTML content
 function createHTML() {
     // Create the header
     const header = document.createElement('header');
     header.innerHTML = `
         <div class="container">
+        <img src="file:///C:/Users/bakou/Pictures/Screenshots/Capture%20d'%C3%A9cran%202024-08-28%20224932.png" alt="FoodAI Logo" class="logo">
             <h1><a href="#hero">FoodAI</a></h1>
             <p>Nutrition Meets Technology for Your Fitness Success</p>
             <nav>
@@ -11,7 +11,7 @@ function createHTML() {
                     <li><a href="#products">Products</a></li>
                     <li><a href="#ai-helper">AI Helper</a></li>
                     <li><a href="#about">About Us</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
             <div class="login-container">
@@ -41,19 +41,25 @@ function createHTML() {
         <h2>Our Products</h2>
         <div class="product-list">
             <div class="product">
-                <img src="https://m.media-amazon.com/images/I/81rkH4m7O3L._AC_UF1000,1000_QL80_.jpg" alt="Produit Amazon" width="600" height="300">
-                <h3>Protein Powders</h3>
-                <p>Boost your muscle recovery with our high-quality protein powders.</p>
+                <a href="protein.html" class="product-link">
+                    <img src="https://m.media-amazon.com/images/I/81rkH4m7O3L._AC_UF1000,1000_QL80_.jpg" alt="Produit Amazon" width="600" height="300">
+                    <h3>Protein Powders</h3>
+                    <p>Boost your muscle recovery with our high-quality protein powders.</p>
+                </a>
             </div>
             <div class="product">
-                <img src="https://www.verywellfit.com/thmb/DmfPZY2OPUSn3TfhCq8uB0Lw9y0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/VWFit-Meal-Plan-Journey-1-Week-Healthy-and-Balance-Meal-Plan-6ee43578918947a4b687922d614f2be3.jpg" alt="Plan de Repas Sain" width="600" height="300">
-                <h3>Healthy Meals</h3>
-                <p>Delicious, balanced meals to keep your energy levels high.</p>
+                <a href="meals.html" class="product-link">
+                    <img src="https://www.verywellfit.com/thmb/DmfPZY2OPUSn3TfhCq8uB0Lw9y0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/VWFit-Meal-Plan-Journey-1-Week-Healthy-and-Balance-Meal-Plan-6ee43578918947a4b687922d614f2be3.jpg" alt="Plan de Repas Sain" width="600" height="300">
+                    <h3>Healthy Meals</h3>
+                    <p>Delicious, balanced meals to keep your energy levels high.</p>
+                </a>
             </div>
             <div class="product">
-                <img src="https://maxesport.gg/medias/2024/09/Brand-Banner_Rez.webp" alt="Bannière de Marque" width="600" height="300">
-                <h3>Energy Drinks</h3>
-                <p>Stay hydrated and energized with our refreshing energy drinks.</p>
+                <a href="drinks.html" class="product-link">
+                    <img src="https://maxesport.gg/medias/2024/09/Brand-Banner_Rez.webp" alt="Bannière de Marque" width="600" height="300">
+                    <h3>Energy Drinks</h3>
+                    <p>Stay hydrated and energized with our refreshing energy drinks.</p>
+                </a>
             </div>
         </div>
     `;

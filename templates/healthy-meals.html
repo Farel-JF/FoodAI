@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthy Meals - FoodAI</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Styles pour la section des ingrédients */
+        .ingredients {
+            margin-top: 20px;
+        }
+        .ingredient {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .ingredient img {
+            margin-right: 10px;
+            width: 40px;
+            height: 40px;
+        }
+        .quantity {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+        }
+        .quantity input {
+            width: 50px;
+            margin: 0 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1><a href="index.html">FoodAI</a></h1>
+            <p>Nutrition Meets Technology for Your Fitness Success</p>
+            <nav>
+                <ul>
+                    <li><a href="#products">Produits</a></li>
+                    <li><a href="#ai-helper">AI Helper</a></li>
+                    <li><a href="#about">À Propos</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="login-container">
+                <a href="login.html" class="btn">Login</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Product Section -->
+    <section id="product-details" class="container">
+        <h2>Healthy Meals</h2>
+        <div class="product-detail">
+            <img src="https://www.verywellfit.com/thmb/DmfPZY2OPUSn3TfhCq8uB0Lw9y0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/VWFit-Meal-Plan-Journey-1-Week-Healthy-and-Balance-Meal-Plan-6ee43578918947a4b687922d614f2be3.jpg" alt="Healthy Meals" width="600" height="300">
+            <div class="product-info">
+                <h3>Description</h3>
+                <p>Délicieux et équilibrés, nos repas sains sont conçus pour maintenir vos niveaux d'énergie élevés tout au long de la journée.</p>
+                <h3>Avantages</h3>
+                <ul>
+                    <li>Ingrédients frais et de haute qualité.</li>
+                    <li>Riche en nutriments essentiels.</li>
+                    <li>Faciles à préparer et prêts à manger.</li>
+                </ul>
+                <h3>Prix</h3>
+                <p>€12.99 par repas</p>
+                <a href="#" class="btn">Ajouter au Panier</a>
+            </div>
+        </div>
+
+        <!-- Ingrédients Section -->
+        <div class="ingredients">
+            <h3>Ingrédients</h3>
+            <div class="ingredient">
+                <img src="https://via.placeholder.com/40" alt="Petit pain aux noix">
+                <p>1 pièce(s) Petit pain aux noix</p>
+                <div class="quantity">
+                    <label for="quantity1">Quantité:</label>
+                    <input type="number" id="quantity1" value="1" min="1" max="6">
+                </div>
+            </div>
+            <div class="ingredient">
+                <img src="https://via.placeholder.com/40" alt="Carotte">
+                <p>½ pièce(s) Carotte</p>
+                <div class="quantity">
+                    <label for="quantity2">Quantité:</label>
+                    <input type="number" id="quantity2" value="1" min="1" max="6">
+                </div>
+            </div>
+            <div class="ingredient">
+                <img src="https://via.placeholder.com/40" alt="Fenouil">
+                <p>½ pièce(s) Fenouil</p>
+                <div class="quantity">
+                    <label for="quantity3">Quantité:</label>
+                    <input type="number" id="quantity3" value="1" min="1" max="6">
+                </div>
+            </div>
+            <!-- Ajoutez d'autres ingrédients selon besoin -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="container">
+        <h2>Contactez Nous</h2>
+        <p>Avez-vous des questions ou besoin d'aide ? Contactez-nous :</p>
+        <ul>
+            <li>Email : support@foodai.com</li>
+            <li>Téléphone : (+33) 0661516641</li>
+        </ul>
+    </footer>
+
+</body>
+</html>

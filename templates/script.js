@@ -73,7 +73,7 @@ header.innerHTML = `
     aiHelperSection.innerHTML = `
         <h2>AI-Powered Nutrition Guide</h2>
         <p>Let our AI help you find the perfect products based on your fitness goals. Whether you want to gain muscle, lose weight, or maintain a balanced diet, our AI will recommend the best options for you.</p>
-        <a href="#" class="btn">Try the AI Helper</a>
+        <a href="AIHelper.html" class="btn">Try the AI Helper</a>
     `;
     document.body.appendChild(aiHelperSection);
 

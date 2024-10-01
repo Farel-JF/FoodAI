@@ -300,8 +300,8 @@ header h1 a:hover {
 }
 
 .logo {
-    width: 50px; /* Ajustez la taille selon vos préférences */
+    width: 50px;
     height: auto;
-    margin-right: 20px; /* Espace entre le logo et le titre */
-    vertical-align: middle; /* Aligne le logo verticalement avec le texte */
+    margin-right: 20px;
+    vertical-align: left;
 }

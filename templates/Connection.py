@@ -23,7 +23,7 @@ def main():
 
             # Créer une table si elle n'existe pas déjà
             create_table_query = """
-            CREATE TABLE IF NOT EXISTS ma_table (
+            CREATE TABLE IF NOT EXISTS users (
                 id INT AUTO_INCREMENT PRIMARY KEY,
                 nom VARCHAR(50),
                 age INT,
@@ -31,7 +31,7 @@ def main():
             )
             """
             cursor.execute(create_table_query)
-            print("Table 'ma_table' vérifiée/créée avec succès")
+            print("Table 'users' vérifiée/créée avec succès")
 
             # Insérer un document (équivalent à une ligne dans une table SQL)
             insert_query = """

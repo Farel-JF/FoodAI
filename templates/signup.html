@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription - FoodAI</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css"> <!-- Lien vers le fichier CSS -->
+</head>
+<body>
+    <header class="bg-success text-white text-center py-4">
+        <div class="container">
+            <h1 class="display-4"><a href="index.html" class="text-white">FoodAI</a></h1>
+            <p>Nutrition Meets Technology for Your Fitness Success</p>
+            <nav class="nav justify-content-center mb-3">
+                <a class="nav-link text-white" href="index.html#products">Produits</a>
+                <a class="nav-link text-white" href="index.html#ai-helper">AI Helper</a>
+                <a class="nav-link text-white" href="index.html#about">À Propos</a>
+                <a class="nav-link text-white" href="contact.html">Contact</a>
+            </nav>
+            <div class="login-container position-absolute" style="top: 10px; left: 10px;">
+            </div>
+        </div>
+    </header>
+
+    <div class="container mt-5">
+        <div class="signup-container border p-4 rounded shadow">
+            <h2 class="text-center mb-4">Créer un compte</h2>
+            <form action="/signup" method="post">
+                <div class="form-group">
+                    <label for="name">Nom</label>
+                    <input type="text" id="name" name="name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="goal">Objectif</label>
+                    <input type="text" id="goal" name="goal" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="diet">Préférence diète</label>
+                    <input type="text" id="diet" name="diet" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Mot de passe</label>
+                    <input type="password" id="password" name="password" class="form-control" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">S'inscrire</button>
+            </form>
+        </div>
+    </div>
+
+    <footer id="contact" class="bg-dark text-white text-center py-4">
+        <h2>Contactez-nous</h2>
+        <p>Avez-vous des questions ou besoin d'aide? Contactez-nous:</p>
+        <ul class="list-unstyled">
+            <li>Email: support@foodai.com</li>
+            <li>Téléphone: (+33) 0661516641</li>
+        </ul>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

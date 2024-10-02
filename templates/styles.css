@@ -423,3 +423,100 @@ footer ul {
 footer ul li {
     margin: 5px 0;
 }
+
+
+/*css signup*/
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+/* Header Styles */
+header {
+    position: relative;
+}
+
+.logo {
+    width: 150px; /* Adjust logo size */
+}
+
+/* Signup Container */
+.signup-container {
+    background-color: #ffffff; /* White background for the form */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Form Styles */
+.form-group label {
+    font-weight: bold; /* Bold labels for better readability */
+}
+
+.btn {
+    font-weight: bold; /* Bold buttons for emphasis */
+}
+
+/* Footer Styles */
+footer {
+    background-color: #343a40; /* Dark background for the footer */
+    color: white; /* White text color */
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 576px) {
+    .signup-container {
+        padding: 2rem; /* Increased padding for mobile */
+    }
+
+    .logo {
+        width: 120px; /* Adjust logo size for mobile */
+    }
+}
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+/* Header Styles */
+header {
+    position: relative;
+}
+
+.logo {
+    width: 150px; /* Adjust logo size */
+}
+
+/* Signup Container */
+.signup-container {
+    background-color: #ffffff; /* White background for the form */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Form Styles */
+.form-group label {
+    font-weight: bold; /* Bold labels for better readability */
+}
+
+.btn {
+    font-weight: bold; /* Bold buttons for emphasis */
+}
+
+/* Footer Styles */
+footer {
+    background-color: #343a40; /* Dark background for the footer */
+    color: white; /* White text color */
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 576px) {
+    .signup-container {
+        padding: 2rem; /* Increased padding for mobile */
+    }
+
+    .logo {
+        width: 120px; /* Adjust logo size for mobile */
+    }
+}
+

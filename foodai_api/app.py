@@ -19,7 +19,7 @@ def signup():
     if 'user_id' in session:
         # Si l'utilisateur est déjà connecté ou enregistré, on le redirige vers la page d'accueil ou tableau de bord
         return redirect(url_for('dashboard'))  # Changez vers la route appropriée
-    return render_template('signup.html') 
+    return render_template('signup.html')
 
 # Route pour traiter le formulaire d'inscription
 @app.route('/signup_process', methods=['POST'])

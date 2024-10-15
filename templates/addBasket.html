@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panier - FoodAI</title>
+    <link rel="stylesheet" href="/static/cart.css"> <!-- External style -->
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1><a href="home.html">FoodAI</a></h1>
+            <p>Nutrition Meets Technology for Your Fitness Success</p>
+            <nav>
+                <ul>
+                    <li><a href="products.html">Produits</a></li>
+                    <li><a href="ai-helper.html">AI Helper</a></li>
+                    <li><a href="about.html">À Propos</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="login-container">
+                <a href="login.html" class="btn">Login</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Cart Section -->
+    <section id="cart" class="container">
+        <h2>Votre Panier</h2>
+        <div id="cart-items">
+            <!-- Les articles ajoutés seront affichés ici -->
+        </div>
+        <div class="cart-total">
+            <h3>Total: <span id="cart-total-price">€0.00</span></h3>
+            <a href="payment.html" class="btn">Passer au paiement</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="container">
+        <div class="footer-content">
+            <h2>Contactez Nous</h2>
+            <p>Avez-vous des questions ou besoin d'aide ? Contactez-nous :</p>
+            <ul>
+                <li>Email : <a href="mailto:support@foodai.com">support@foodai.com</a></li>
+                <li>Téléphone : (+33) 0661516641</li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Récupérer le panier depuis localStorage
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartItemsContainer = document.getElementById('cart-items');
+            const cartTotalPrice = document.getElementById('cart-total-price');
+
+            // Fonction pour mettre à jour l'affichage du panier
+            function updateCartDisplay() {
+                cartItemsContainer.innerHTML = '';
+                let totalPrice = 0;
+
+                cart.forEach((item, index) => {
+                    const itemRow = document.createElement('div');
+                    itemRow.className = 'cart-item';
+                    itemRow.innerHTML = `
+                        <p>${item.name} - €${item.price.toFixed(2)} x ${item.quantity}</p>
+                        <button class="remove-btn" onclick="removeFromCart(${index})">Retirer</button>
+                    `;
+                    cartItemsContainer.appendChild(itemRow);
+                    totalPrice += item.price * item.quantity;
+                });
+
+                cartTotalPrice.textContent = `€${totalPrice.toFixed(2)}`;
+            }
+
+            // Fonction pour retirer un article du panier
+            window.removeFromCart = function(index) {
+                cart.splice(index, 1);  // Retire l'article à l'index donné
+                localStorage.setItem('cart', JSON.stringify(cart));  // Sauvegarde le panier mis à jour
+                updateCartDisplay();  // Met à jour l'affichage
+            }
+
+            // Affiche le contenu initial du panier
+            updateCartDisplay();
+        });
+    </script>
+
+</body>
+</html>

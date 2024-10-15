@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - FoodAI</title>
+    <link rel="stylesheet" href="/Static/payment.css"> <!-- External CSS -->
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1><a href="home.html">FoodAI</a></h1>
+            <p>Nutrition Meets Technology for Your Fitness Success</p>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Accueil</a></li>
+                    <li><a href="about.html">À Propos</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="register.html">Register</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Payment Section -->
+    <section id="payment" class="container">
+        <h2>Finalisez votre Paiement</h2>
+        <form action="#" method="post" class="payment-form">
+            <label for="card-name">Nom sur la Carte</label>
+            <input type="text" id="card-name" name="card-name" placeholder="Nom complet" required>
+
+            <label for="card-number">Numéro de Carte</label>
+            <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9012 3456" required>
+
+            <label for="exp-date">Date d'Expiration</label>
+            <input type="text" id="exp-date" name="exp-date" placeholder="MM/AA" required>
+
+            <label for="cvv">CVV</label>
+            <input type="text" id="cvv" name="cvv" placeholder="123" required>
+
+            <label for="billing-address">Adresse de Facturation</label>
+            <input type="text" id="billing-address" name="billing-address" placeholder="Adresse complète" required>
+
+            <h3>Total à Payer : €<span id="total-price">1.99</span></h3>
+
+            <button type="submit" class="btn">Payer</button>
+        </form>
+        <p>Retourner au <a href="products.html">Catalogue</a>.</p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="container">
+        <p>&copy; 2024 FoodAI. Tous droits réservés.</p>
+    </footer>
+
+</body>
+</html>

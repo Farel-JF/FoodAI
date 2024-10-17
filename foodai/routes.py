@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify
-from models import db, User, Product, Order, Review
+# from models import db, User, Product, Order, Review
+from foodai.models import db, User, Product, Order, Review
 
 app = Flask(__name__)
 

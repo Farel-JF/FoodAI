@@ -10,7 +10,7 @@
 <body>
     <header>
         <div class="container">
-            <h1><a href="home.html">FoodAI</a></h1>
+            <h1><a href="{{ url_for('home') }}">FoodAI</a></h1>
             <p>Nutrition Meets Technology for Your Fitness Success</p>
         </div>
     </header>
@@ -34,7 +34,7 @@
                 </div>
                 <button type="submit">Login</button>
             </form>
-            <p>Don't have an account? <a href="register.html">Sign up here</a></p>
+            <p>Don't have an account? <a href="{{ url_for('register') }}">Sign up here</a></p>
         </div>
     </section>
 

@@ -11,9 +11,10 @@ from flask_login import (
 )
 
 @app.route("/")
-@app.route("/home")
+@app.route('/home')
 def home():
-    return render_template("home.html")
+    return render_template('home.html')
+
 
 @app.route("/about")
 def about():
@@ -63,7 +64,7 @@ def login():
     return render_template("login.html", title="Login", form=form)
 
 
-@app.route('/login', methods=['POST'])
+#@app.route('/login', methods=['POST'])
 #def login_process():
     # Your POST logic here
 #    return redirect(url_for('home'))

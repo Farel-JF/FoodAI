@@ -1,23 +1,45 @@
 function createHTML() {
+    // Get the login URL from the Jinja template (Flask will render it)
+    const loginUrl = "{{ url_for('login') }}";  // This will be rendered by Flask when serving the page.
+
     // Create the header
     const header = document.createElement('header');
-header.innerHTML = `
-    <div class="container">
-        <h1><a href="#hero">FoodAI</a></h1>
-        <p>Nutrition Meets Technology for Your Fitness Success</p>
-        <nav>
-            <ul>
-                <li><a href="#products">Products</a></li>
-                <li><a href="#ai-helper">AI Helper</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="login-container">
-            <a url= href="login.html" class="btn">Login</a>
+    header.innerHTML = `
+        <div class="container">
+            <h1><a href="#hero">FoodAI</a></h1>
+            <p>Nutrition Meets Technology for Your Fitness Success</p>
+            <nav>
+                <ul>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#ai-helper">AI Helper</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="login-container">
+                <a id="login-btn" href="${loginUrl}" class="btn">Login</a>
+            </div>
         </div>
-    </div>
-`;
+    `;
+
+    // Append the header to the body
+    document.body.appendChild(header);
+}
+
+
+    // Append the header to the body
+    document.body.appendChild(header);
+}
+
+
+    // Set the login link dynamically
+    const loginUrl = "{{ url_for('login') }}"; // Rendered by Flask
+    document.querySelector('#login-btn').setAttribute('href', loginUrl);
+
+    // Append the header to the body
+    document.body.appendChild(header);
+}
+
 
     document.body.appendChild(header);
 

@@ -1,7 +1,7 @@
 from foodai.models import User
 from flask import render_template, url_for, flash, redirect, request
 from foodai.form import RegistrationForm, LoginForm
-from foodai import app, bcrypt, db
+from foodai import app, bcrypt, db, login_manager
 from flask_login import (
     login_required,
     login_user,
@@ -10,39 +10,63 @@ from flask_login import (
     login_required,
 )
 
+
+
 @app.route("/")
 @app.route('/home')
 def home():
     return render_template('home.html')
 
-
 @app.route("/about")
 def about():
     return render_template("about.html", title="About")
 
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
+
+@app.route('/protein')
+def protein():
+    return render_template('protein.html')
+
+@app.route('/healthy_meals')
+def healthy_meals():
+    return render_template('healthy_meals.html')
+
+@app.route('/energy_drinks')
+def energy_drinks():
+    return render_template('energy_drinks.html')
+
+@app.route('/ai_helper')
+def ai_helper():
+    return render_template('ai_helper.html')
+
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(int(user_id))
 
 
+# Define your routes...
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if current_user.is_authenticated:
         return redirect(url_for("home"))
     form = RegistrationForm()
     if form.validate_on_submit():
-        hashed_password = bcrypt.generate_password_hash(form.password.data).decode(
-            "utf-8"
-        )
+        hashed_password = bcrypt.generate_password_hash(form.password.data).decode("utf-8")
         user = User(
-            fname=form.fname.data,
-            lname=form.lname.data,
-            username=form.username.data,
+            name=form.name.data,
             email=form.email.data,
             password=hashed_password,
         )
         db.session.add(user)
         db.session.commit()
-        flash(f"Account created successfully for {form.username.data}", "success")
+        flash(f"Account created successfully for {form.name.data}", "success")
         return redirect(url_for("login"))
     return render_template("register.html", title="Register", form=form)
+
+def load_user(user_id):
+    return User.query.get(int(user_id))
 
 @app.route("/login", methods=['GET', 'POST'])
 def login():
@@ -63,11 +87,6 @@ def login():
 
     return render_template("login.html", title="Login", form=form)
 
-
-#@app.route('/login', methods=['POST'])
-#def login_process():
-    # Your POST logic here
-#    return redirect(url_for('home'))
 @app.route("/logout")
 def logout():
     logout_user()

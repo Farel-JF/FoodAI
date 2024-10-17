@@ -5,41 +5,57 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FoodAI - Login</title>
-    <link rel="stylesheet" href="/static/styles.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/styles.css">  <!-- Your custom styles if needed -->
 </head>
 <body>
-    <header>
+
+    <header class="bg-success text-white text-center py-4">
         <div class="container">
-            <h1><a href="{{ url_for('home') }}">FoodAI</a></h1>
+            <h1><a href="{{ url_for('home') }}" class="text-white text-decoration-none">FoodAI</a></h1>
             <p>Nutrition Meets Technology for Your Fitness Success</p>
         </div>
     </header>
 
-    <section id="login" class="container">
-        <div class="login-box">
-            <h2>Login </h2>
-            <form action="{{ url_for('login') }}" method="POST">
-                {{ form.hidden_tag() }}
-                <div>
-                    {{ form.email.label }}
-                    {{ form.email() }}
+    <section id="login" class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h2 class="card-title text-center mb-4">Login</h2>
+                        <form action="{{ url_for('login') }}" method="POST">
+                            {{ form.hidden_tag() }}
+
+                            <div class="mb-3">
+                                {{ form.email.label(class="form-label") }}
+                                {{ form.email(class="form-control") }}
+                            </div>
+
+                            <div class="mb-3">
+                                {{ form.password.label(class="form-label") }}
+                                {{ form.password(class="form-control") }}
+                            </div>
+
+                            <div class="mb-3 form-check">
+                                {{ form.remember() }}
+                                {{ form.remember.label(class="form-check-label") }}
+                            </div>
+
+                            <button type="submit" class="btn btn-success w-100">Login</button>
+                        </form>
+                        <p class="mt-3 text-center">Don't have an account? <a href="{{ url_for('register') }}" class="text-success">Sign up here</a></p>
+                    </div>
                 </div>
-                <div>
-                    {{ form.password.label }}
-                    {{ form.password() }}
-                </div>
-                <div>
-                    {{ form.remember.label }}
-                    {{ form.remember() }}
-                </div>
-                <button type="submit">Login</button>
-            </form>
-            <p>Don't have an account? <a href="{{ url_for('register') }}">Sign up here</a></p>
+            </div>
         </div>
     </section>
 
-    <footer class="container">
+    <footer class="bg-dark text-white text-center py-3">
         <p>&copy; 2024 FoodAI. All Rights Reserved.</p>
     </footer>
+
+    <!-- Bootstrap JS (Optional for features like form validation or dropdowns) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

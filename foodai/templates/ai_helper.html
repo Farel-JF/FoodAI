@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Helper - FoodAI</title>
+    <link rel="stylesheet" href="/static/styles.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><a href="{{ url_for('home') }}">FoodAI</a></h1>
+            <p>Nutrition Meets Technology for Your Fitness Success</p>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('home') }}#products">Products</a></li>
+                    <li><a href="{{ url_for('home') }}#about">about</a></li>
+                    <li><a href="{{ url_for('home') }}#Contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="login-container">
+                <a id="login-btn" href="{{ url_for('login') }}"class="btn">Login</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="ai-helper" class="container">
+            <img src="https://cdn.prod.website-files.com/62c82c2449b0ebd57821fd87/653d8b67a494cdf3059b8a39_nutrition-hero-graphic-p-1080.webp" alt="Nutrition Guide" class="hero-image">
+            <h2>AI-Powered Nutrition Guide</h2>
+            <p>Let our AI help you find the perfect products based on your fitness goals. Whether you want to gain muscle, lose weight, or maintain a balanced diet, our AI will recommend the best options for you.</p>
+            <form id="ai-form">
+                <label for="goal">Select Your Fitness Goal:</label>
+                <select id="goal" name="goal" required>
+                    <option value="">--Choose an option--</option>
+                    <option value="gain">Gain Muscle</option>
+                    <option value="lose">Lose Weight</option>
+                    <option value="maintain">Maintain Weight</option>
+                </select>
+
+                <label for="diet">Diet Preference:</label>
+                <select id="diet" name="diet">
+                    <option value="">--Choose an option--</option>
+                    <option value="vegan">Vegan</option>
+                    <option value="vegetarian">Vegetarian</option>
+                    <option value="omnivore">Omnivore</option>
+                </select>
+
+                <button type="submit" class="btn">Get Recommendations</button>
+            </form>
+
+            <div id="recommendations" class="recommendations"></div>
+        </section>
+    </main>
+
+    <footer id="contact" class="container">
+        <h2>Contact Us</h2>
+        <p>Have questions or need help? Reach out to us:</p>
+        <ul>
+            <li>Email: support@foodai.com</li>
+            <li>Phone: (+33) 0661516641</li>
+        </ul>
+    </footer>
+
+    <script src="/static/aiHelper.js"></script>
+</body>
+</html>

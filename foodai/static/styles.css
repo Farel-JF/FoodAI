@@ -1,0 +1,522 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.container p {
+    text-align: center;
+    width: 30%;
+    margin: auto;
+    overflow: hidden;
+}
+/* Header */
+header {
+    background: #50b3a2;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 10px;
+    font-size: 36px;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Hero Section */
+#hero {
+    background: url('images/gym-background.jpg') no-repeat center center/cover;
+    height: 400px;
+    color: rgb(7, 7, 7);
+    text-align: center;
+    padding-top: 150px;
+}
+
+#hero h2 {
+    font-size: 48px;
+}
+
+#hero p {
+    font-size: 20px;
+}
+
+#hero .btn {
+    background: #ff6347;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+#hero .btn:hover {
+    background: #e55340;
+}
+
+/* Products Section */
+#products .product-list {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+#products .product {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    text-align: center;
+}
+
+#products .product img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+#products .product h3 {
+    margin: 20px 0;
+}
+
+#products .product p {
+    color: #555;
+}
+
+/* AI Helper Section */
+#ai-helper {
+    background-color: #50b3a2;
+    color: white;
+    padding: 40px;
+    margin-top: 40px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+#ai-helper h2 {
+    margin-bottom: 20px;
+}
+
+#ai-helper .btn {
+    background: #ff6347;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+#ai-helper .btn:hover {
+    background: #e55340;
+}
+
+/* About Section */
+#about {
+    margin: 40px 0;
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+footer ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Login Page */
+#login .login-box {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 100px auto;
+    text-align: center;
+}
+
+#login h2 {
+    margin-bottom: 30px;
+}
+
+#login .input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+#login .input-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#login .input-group input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#login .btn {
+    background: #50b3a2;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#login .btn:hover {
+    background: #469c90;
+}
+
+#login p {
+    margin-top: 20px;
+}
+
+#login a {
+    color: #50b3a2;
+    text-decoration: none;
+}
+
+#login a:hover {
+    text-decoration: underline;
+}
+header {
+    position: relative; /* Pour le positionnement du bouton de connexion */
+}
+
+.login-container {
+    position: absolute; /* Positionne le conteneur de connexion */
+    top: 20px; /* Ajuste cette valeur pour le placer verticalement */
+    right: 20px; /* Ajuste cette valeur pour le placer horizontalement */
+}
+
+.login-container .btn {
+    padding: 10px 15px; /* Ajuste le padding du bouton */
+    background-color: #fdfdfd; /* Couleur de fond */
+    color: rgb(8, 245, 213); /* Couleur du texte */
+    text-decoration: none; /* Retire le soulignement */
+    border-radius: 5px; /* Coins arrondis */
+}
+
+.login-container .btn:hover {
+    background-color: #080000ef; /* Couleur au survol */
+}
+header h1 a {
+    text-decoration: none; /* Retire le soulignement du lien */
+    color: inherit; /* Hérite la couleur du texte de h1 */
+}
+
+header h1 a:hover {
+    color: #ffffff; /* Change la couleur au survol (ajuste selon tes besoins) */
+}
+
+.product-link {
+    color: black; /* Change text color to black */
+    text-decoration: none; /* Remove underline */
+}
+
+.product-link:hover {
+    text-decoration: underline; /* Underline on hover for better UX */
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+.product-detail {
+    display: flex;
+    margin-top: 20px;
+}
+
+.product-detail img {
+    max-width: 100%;
+    height: auto;
+}
+
+.product-info {
+    margin-left: 20px;
+}
+
+.product-info h3 {
+    margin-top: 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.logo {
+    width: 50px;
+    height: auto;
+    margin-right: 20px;
+    vertical-align: left;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif; /* Use a clean, modern font */
+}
+
+body {
+    background-color: #f4f4f4; /* Light background color */
+    color: #333; /* Dark text color */
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+header {
+    background-color: #50b3a2; /* Green header */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header .logo {
+    width: 100px; /* Adjust logo size */
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.login-container {
+    margin-top: 15px;
+}
+
+.btn {
+    background-color: #FFD700; /* Gold button */
+    color: #333;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: #FFC300; /* Lighter gold on hover */
+}
+
+main {
+    padding: 20px 0;
+}
+
+.hero-image {
+    width: 100%; /* Make hero image responsive */
+    height: auto;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+}
+
+h2 {
+    margin: 20px 0;
+}
+
+form {
+    background-color: #fff; /* White background for form */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc; /* Light border */
+}
+
+footer {
+    background-color: #333; /* Dark footer */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+}
+
+footer ul {
+    list-style-type: none;
+}
+
+footer ul li {
+    margin: 5px 0;
+}
+
+
+/*css signup*/
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+/* Header Styles */
+header {
+    position: relative;
+}
+
+.logo {
+    width: 150px; /* Adjust logo size */
+}
+
+/* Signup Container */
+.signup-container {
+    background-color: #ffffff; /* White background for the form */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Form Styles */
+.form-group label {
+    font-weight: bold; /* Bold labels for better readability */
+}
+
+.btn {
+    font-weight: bold; /* Bold buttons for emphasis */
+}
+
+/* Footer Styles */
+footer {
+    background-color: #343a40; /* Dark background for the footer */
+    color: white; /* White text color */
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 576px) {
+    .signup-container {
+        padding: 2rem; /* Increased padding for mobile */
+    }
+
+    .logo {
+        width: 120px; /* Adjust logo size for mobile */
+    }
+}
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+/* Header Styles */
+header {
+    position: relative;
+}
+
+.logo {
+    width: 150px; /* Adjust logo size */
+}
+
+/* Signup Container */
+.signup-container {
+    background-color: #ffffff; /* White background for the form */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Form Styles */
+.form-group label {
+    font-weight: bold; /* Bold labels for better readability */
+}
+
+.btn {
+    font-weight: bold; /* Bold buttons for emphasis */
+}
+
+/* Footer Styles */
+footer {
+    background-color: #343a40; /* Dark background for the footer */
+    color: white; /* White text color */
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 576px) {
+    .signup-container {
+        padding: 2rem; /* Increased padding for mobile */
+    }
+
+    .logo {
+        width: 120px; /* Adjust logo size for mobile */
+    }
+}
+

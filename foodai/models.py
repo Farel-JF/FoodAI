@@ -6,7 +6,7 @@ from sqlalchemy import CheckConstraint  # Import CheckConstraint
 from werkzeug.security import generate_password_hash, check_password_hash
 
 # Initialize the SQLAlchemy object
-db = SQLAlchemy()
+db = SQLAlchemy(app)
 
 # Define your models...
 class User(db.Model, UserMixin):

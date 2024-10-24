@@ -2,6 +2,7 @@ from flask_login import UserMixin
 from datetime import datetime
 from foodai import db  # Import db from __init__.py
 from sqlalchemy import CheckConstraint  # Import CheckConstraint
+from werkzeug.security import generate_password_hash, check_password_hash
 
 # Define your models...
 class User(db.Model, UserMixin):
@@ -105,9 +106,9 @@ class Reviews(db.Model):
     __tablename__ = 'Reviews'
 
     review_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    user_id = db.Column(db.Integer, db.ForeignKey('Users.user_id'))
-    product_id = db.Column(db.Integer, db.ForeignKey('Products.product_id'))
-    rating = db.Column(db.Integer, CheckConstraint('rating BETWEEN 1 AND 5'))  # Check constraint for rating
+    user_id = db.Column(db.Integer, db.ForeignKey('Users.user_id'), nullable=False)
+    product_id = db.Column(db.Integer, db.ForeignKey('Products.product_id'), nullable=False)
+    rating = db.Column(db.Integer, CheckConstraint('rating BETWEEN 1 AND 5'), nullable=False)
     comment = db.Column(db.Text)
     review_date = db.Column(db.DateTime, default=datetime.utcnow)
 

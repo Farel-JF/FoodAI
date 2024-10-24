@@ -18,7 +18,6 @@
                     <li><a href="home.html">Accueil</a></li>
                     <li><a href="about.html">À Propos</a></li>
                     <li><a href="contact.html">Contact</a></li>
-                    <li><a href="login.html">Login</a></li>
                 </ul>
             </nav>
         </div>
@@ -40,9 +39,9 @@
             <label for="confirm-password">Confirmer le Mot de Passe</label>
             <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirmez votre mot de passe" required>
 
-            <button type="submit" class="btn">S'inscrire</button>
+            <button type="submit" class="btn">Sign out</button>
         </form>
-        <p>Vous avez déjà un compte ? <a href="login.html">Connectez-vous ici</a>.</p>
+        <p>Vous avez déjà un compte ? <a href="{{ url_for('login') }}">Login</a>.</p>
     </section>
 
     <!-- Footer -->

@@ -40,14 +40,14 @@
             <p>Nutrition Meets Technology for Your Fitness Success</p>
             <nav>
                 <ul>
-                    <li><a href="#products">Produits</a></li>
-                    <li><a href="#ai-helper">AI Helper</a></li>
-                    <li><a href="#about">À Propos</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="{{ url_for('home') }}">Products</a></li>
+                    <li><a href="{{ url_for('ai_helper') }}">AI Helper</a></li>
+                    <li><a href="{{ url_for('home') }}">About Us</a></li>
+                    <li><a href="{{ url_for('contact') }}">Contact</a></li>
                 </ul>
             </nav>
             <div class="login-container">
-                <a href="login.html" class="btn">Login</a>
+                <a href="{{ url_for('login') }}" class="btn">Login</a>
             </div>
         </div>
     </header>

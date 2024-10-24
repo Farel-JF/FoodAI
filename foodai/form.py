@@ -13,6 +13,7 @@ from wtforms.validators import (
     ValidationError,
 )
 from foodai.models import User
+
 class RegistrationForm(FlaskForm):
     fname = StringField(
         "First Name", validators=[DataRequired(), Length(min=2, max=25)]
@@ -55,7 +56,7 @@ class LoginForm(FlaskForm):
     )
     remember = BooleanField("Remember Me")
     submit = SubmitField("Log In")
-from foodai.models import User
+
 class RegistrationForm(FlaskForm):
     fname = StringField(
         "First Name", validators=[DataRequired(), Length(min=2, max=25)]
@@ -98,3 +99,4 @@ class LoginForm(FlaskForm):
     )
     remember = BooleanField("Remember Me")
     submit = SubmitField("Log In")
+

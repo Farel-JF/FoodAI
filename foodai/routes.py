@@ -1,16 +1,13 @@
-from foodai.models import User
 from flask import render_template, url_for, flash, redirect, request
-from foodai.form import RegistrationForm, LoginForm
-from foodai import app, bcrypt, db, login_manager
 from flask_login import (
-    login_required,
     login_user,
-    current_user,
     logout_user,
+    current_user,
     login_required,
 )
-
-
+from foodai import app, bcrypt, db, login_manager
+from foodai.models import User
+from foodai.form import RegistrationForm, LoginForm
 
 @app.route("/")
 @app.route('/home')
@@ -45,14 +42,14 @@ def ai_helper():
 def load_user(user_id):
     return User.query.get(int(user_id))
 
-
-# Define your routes...
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if current_user.is_authenticated:
         return redirect(url_for("home"))
-    form = RegistrationForm()
+
+    form = RegistrationForm()  # Initialize the form
     if form.validate_on_submit():
+        # Hash the password within the context of the route
         hashed_password = bcrypt.generate_password_hash(form.password.data).decode("utf-8")
         user = User(
             name=form.name.data,
@@ -63,10 +60,8 @@ def register():
         db.session.commit()
         flash(f"Account created successfully for {form.name.data}", "success")
         return redirect(url_for("login"))
-    return render_template("register.html", title="Register", form=form)
 
-def load_user(user_id):
-    return User.query.get(int(user_id))
+    return render_template("register.html", title="Register", form=form)
 
 @app.route("/login", methods=['GET', 'POST'])
 def login():
@@ -74,14 +69,12 @@ def login():
         return redirect(url_for('home'))  # Redirect if already logged in
 
     form = LoginForm()  # Initialize the form
-
     if form.validate_on_submit():
         user = User.query.filter_by(email=form.email.data).first()
         if user and bcrypt.check_password_hash(user.password, form.password.data):
             login_user(user, remember=form.remember.data)
-            next_page = request.args.get('next')  # Get the next page to redirect to
             flash("You have been logged in!", "success")
-            return redirect(next_page) if next_page else redirect(url_for("home"))
+            return redirect(url_for("home"))
         else:
             flash("Login Unsuccessful. Please check credentials", "danger")
 
@@ -91,23 +84,3 @@ def login():
 def logout():
     logout_user()
     return redirect(url_for("home"))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

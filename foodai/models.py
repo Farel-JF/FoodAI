@@ -1,14 +1,14 @@
+# Import necessary modules
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin
 from datetime import datetime
-from foodai import db  # Import db from __init__.py
-from sqlalchemy import CheckConstraint  # Import CheckConstraint
+from sqlalchemy import CheckConstraint
 from werkzeug.security import generate_password_hash, check_password_hash
 
-# Initialize the SQLAlchemy object
-db = SQLAlchemy(app)
+# Import db from your app's __init__.py
+from foodai import db
 
-# Define your models...
+# Define your User model
 class User(db.Model, UserMixin):
     __tablename__ = 'Users'
 
@@ -27,8 +27,7 @@ class User(db.Model, UserMixin):
     def __repr__(self):
         return f"User('{self.user_id}', '{self.name}', '{self.email}')"
 
-# Rest of the models...
-
+# Define the Categories model
 class Categories(db.Model):
     __tablename__ = 'Categories'
 
@@ -38,7 +37,7 @@ class Categories(db.Model):
 
     products = db.relationship("Products", back_populates="category")
 
-
+# Define the Products model
 class Products(db.Model):
     __tablename__ = 'Products'
 
@@ -55,7 +54,7 @@ class Products(db.Model):
     recommendations = db.relationship("Recommendations", back_populates="product")
     reviews = db.relationship("Reviews", back_populates="product")
 
-
+# Define the Diet Preferences model
 class Diet_Preferences(db.Model):
     __tablename__ = 'Diet_Preferences'
 
@@ -63,7 +62,7 @@ class Diet_Preferences(db.Model):
     name = db.Column(db.String(255), nullable=False)
     description = db.Column(db.Text)
 
-
+# Define the Orders model
 class Orders(db.Model):
     __tablename__ = 'Orders'
 
@@ -76,7 +75,7 @@ class Orders(db.Model):
     user = db.relationship("User", back_populates="orders")
     order_items = db.relationship("Order_Items", back_populates="order")
 
-
+# Define the Order Items model
 class Order_Items(db.Model):
     __tablename__ = 'Order_Items'
 
@@ -89,7 +88,7 @@ class Order_Items(db.Model):
     order = db.relationship("Orders", back_populates="order_items")
     product = db.relationship("Products", back_populates="order_items")
 
-
+# Define the Recommendations model
 class Recommendations(db.Model):
     __tablename__ = 'Recommendations'
 
@@ -101,7 +100,7 @@ class Recommendations(db.Model):
     user = db.relationship("User", back_populates="recommendations")
     product = db.relationship("Products", back_populates="recommendations")
 
-
+# Define the Reviews model
 class Reviews(db.Model):
     __tablename__ = 'Reviews'
 

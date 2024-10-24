@@ -33,7 +33,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/mnt/c/Users/bakou/FoodAI-5/venv"
+set -gx VIRTUAL_ENV "/mnt/c/Users/bakou/FoodAI-6/venv"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH

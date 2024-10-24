@@ -1,8 +1,12 @@
+from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin
 from datetime import datetime
 from foodai import db  # Import db from __init__.py
 from sqlalchemy import CheckConstraint  # Import CheckConstraint
 from werkzeug.security import generate_password_hash, check_password_hash
+
+# Initialize the SQLAlchemy object
+db = SQLAlchemy()
 
 # Define your models...
 class User(db.Model, UserMixin):
@@ -23,11 +27,7 @@ class User(db.Model, UserMixin):
     def __repr__(self):
         return f"User('{self.user_id}', '{self.name}', '{self.email}')"
 
-
-
 # Rest of the models...
-
-
 
 class Categories(db.Model):
     __tablename__ = 'Categories'

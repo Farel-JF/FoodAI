@@ -5,15 +5,16 @@ from flask_login import LoginManager
 from flask_migrate import Migrate
 from sqlalchemy import create_engine
 
-# Remplace 'username', 'password' et 'db_name' par les bonnes valeurs
-engine = create_engine("mysql+pymysql://root:Farel275&@localhost/db")
-
 
 # Initialize the app
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://rootpip:Farel275&@localhost/FoodAI'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:Farel275&@localhost/FoodAI'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://username:password@localhost/db'
+
 app.config['SECRET_KEY'] = 'your_secret_key'
 
+# Remplace 'username', 'password' et 'db_name' par les bonnes valeurs
+engine = create_engine("mysql+pymysql://root:Farel275&@localhost/db")
 # Initialize extensions
 db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)

@@ -38,6 +38,11 @@ def energy_drinks():
 def ai_helper():
     return render_template('ai_helper.html')
 
+@app.route('/payment')
+def payment():
+    return render_template('payment.html')
+
+
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(int(user_id))

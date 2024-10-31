@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panier - FoodAI</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1><a href="{{ url_for('home') }}">FoodAI</a></h1>
+            <p>Nutrition Meets Technology for Your Fitness Success</p>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('home') }}">Produits</a></li>
+                    <li><a href="{{ url_for('ai_helper') }}">AI Helper</a></li>
+                    <li><a href="{{ url_for('home') }}">À Propos</a></li>
+                    <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="login-container">
+                <a id="login-btn" href="{{ url_for('login') }}" class="btn">Login</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Cart Section -->
+    <section id="cart" class="container">
+        <h2>Votre Panier</h2>
+
+        <!-- Liste des Produits dans le Panier -->
+        <div class="cart-items">
+            <div class="cart-item">
+                <img src="https://m.media-amazon.com/images/I/81rkH4m7O3L._AC_UF1000,1000_QL80_.jpg" alt="Protein Powder" width="100" height="100">
+                <div class="item-details">
+                    <h3>Protein Powder</h3>
+                    <p>Quantité : 1</p>
+                    <p>Prix : €29.99</p>
+                </div>
+                <button class="remove-btn">Retirer</button>
+            </div>
+        </div>
+
+        <!-- Prix Total et Bouton de Paiement -->
+        <h3>Total : €<span id="total-price">29.99</span></h3>
+        <a href="{{ url_for('payment') }}" class="btn">Passer au Paiement</a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="container">
+        <p>&copy; 2024 FoodAI. Tous droits réservés.</p>
+    </footer>
+
+</body>
+</html>

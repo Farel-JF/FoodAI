@@ -15,11 +15,11 @@
             <p>Nutrition Meets Technology for Your Fitness Success</p>
             <nav>
                 <ul>
-                    <li><a href="products.html">Produits</a></li>
-                    <li><a href="about.html">À Propos</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="login.html">Login</a></li>
-                    <li><a href="register.html">Register</a></li>
+                    <li><a href="{{ url_for('home') }}">Produits</a></li>
+                    <li><a href="{{ url_for('about') }}">À Propos</a></li>
+                    <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                    <li><a href="{{ url_for('login') }}">Login</a></li>
+                    <li><a href="{{ url_for('register') }}">Register</a></li>
                 </ul>
             </nav>
         </div>
@@ -44,11 +44,12 @@
             <label for="billing-address">Adresse de Facturation</label>
             <input type="text" id="billing-address" name="billing-address" placeholder="Adresse complète" required>
 
-            <h3>Total à Payer : €<span id="total-price">1.99</span></h3>
+            <!-- Dynamically display the total price -->
+            <h3>Total à Payer : €<span id="total-price">{{ total_price }}</span></h3>
 
             <button type="submit" class="btn">Payer</button>
         </form>
-        <p>Retourner au <a href="products.html">Catalogue</a>.</p>
+        <p>Retourner au <a href="{{ url_for('home') }}">Catalogue</a>.</p>
     </section>
 
     <!-- Footer -->

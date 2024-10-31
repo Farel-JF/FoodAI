@@ -40,8 +40,13 @@ def ai_helper():
 
 @app.route('/payment')
 def payment():
-    return render_template('payment.html')
+    total_price = 29.99  # This should be the actual total from the cart
+    return render_template('payment.html', total_price=total_price)
 
+
+@app.route('/cart')
+def cart():
+    return render_template('cart.html')
 
 @login_manager.user_loader
 def load_user(user_id):

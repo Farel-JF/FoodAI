@@ -9,7 +9,7 @@ from markupsafe import Markup
 
 # Import db from your app's __init__.py
 from foodai import db
-
+db = SQLAlchemy()
 # Define your User model
 class User(db.Model, UserMixin):
     __tablename__ = 'Users'

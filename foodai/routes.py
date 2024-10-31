@@ -1,13 +1,9 @@
-from flask import render_template, url_for, flash, redirect, request
-from flask_login import (
-    login_user,
-    logout_user,
-    current_user,
-    login_required,
-)
+from flask import render_template, url_for, flash, redirect, request, session
+from flask_login import login_user, logout_user, current_user, login_required
 from foodai import app, bcrypt, db, login_manager
 from foodai.models import User
 from foodai.form import RegistrationForm, LoginForm
+from foodai.models import Products
 
 @app.route("/")
 @app.route('/home')
@@ -26,6 +22,29 @@ def contact():
 def protein():
     return render_template('protein.html')
 
+@app.route('/products')  # Endpoint for listing all products
+def products():
+    # Logic to fetch and display all products
+    return render_template('products.html', title="Products")
+
+@app.route('/product/<int:product_id>')
+def product(product_id):
+    # Fetch the product from the database
+    product_details = Products.query.get(product_id)
+
+    # Check if the product exists
+    if product_details is None:
+        flash("Product not found.", "danger")
+        return redirect(url_for('home'))  # Redirect to home if not found
+
+    return render_template('product.html', product=product_details)
+
+
+
+def get_product_by_id(product_id):
+    return Product.query.get(product_id)  # Assuming Product is your model
+
+
 @app.route('/healthy_meals')
 def healthy_meals():
     return render_template('healthy_meals.html')
@@ -38,44 +57,53 @@ def energy_drinks():
 def ai_helper():
     return render_template('ai_helper.html')
 
-app.secret_key = 'votre_cle_secrete'  # Remplacez par une clé secrète réelle
+app.secret_key = 'Farel275&'  # Remplacez par une clé secrète réelle
 
 @app.route('/payment', methods=['GET', 'POST'])
 def payment():
-    # Obtenez le panier de la session
     cart = session.get('cart', [])
-
-    # Calculez le prix total
     total_price = sum(item['price'] * item['quantity'] for item in cart)
-
-    # Formatage du prix total en tant que chaîne avec deux décimales
     total_price_formatted = "{:.2f}".format(total_price)
 
     if request.method == 'POST':
-        # Gérer la logique de paiement ici
-        pass  # Remplacez par votre logique de traitement de paiement
+        # Handle payment processing logic here
+        session.pop('cart', None)  # Clear the cart after payment
+        flash("Payment successful!", "success")
+        return redirect(url_for('home'))
 
-    # Rendre la page de paiement avec le prix total
     return render_template('payment.html', total_price=total_price_formatted)
 
+@app.route('/cart', methods=['GET'])
+def cart():
+    cart = session.get('cart', [])
+    return render_template('cart.html', cart=cart)
 
-@app.route('/add_to_cart', methods=['POST'])
-def add_to_cart():
-    item = {
-        'product': request.form['product'],
-        'price': float(request.form['price']),
-        'quantity': int(request.form['quantity'])
-    }
+@app.route('/add_to_cart/<int:product_id>', methods=['POST'])
+def add_to_cart(product_id):
+    # Logic to add the product to the cart
+    product = Products.query.get(product_id)
+    if product:
+        # Assuming you have logic to initialize the cart
+        item = {
+            'product_id': product.product_id,
+            'product_name': product.name,
+            'price': str(product.price),  # Store as string for session
+            'quantity': 1  # Default to 1 for simplicity
+        }
 
-    # Initialisez le panier si ce n'est pas encore fait
-    if 'cart' not in session:
-        session['cart'] = []
+        # Initialize cart if it doesn't exist
+        if 'cart' not in session:
+            session['cart'] = []
 
-    # Ajoutez l'item au panier
-    session['cart'].append(item)
-    session.modified = True  # Indiquez que la session a été modifiée
+        # Append product to cart
+        session['cart'].append(item)
+        session.modified = True
 
-    return redirect(url_for('home'))  # Redirigez vers la page d'accueil ou une autre page
+        flash(f"{product.name} has been added to your cart!", "success")
+        return redirect(url_for('product', product_id=product.product_id))
+
+    flash("Product not found.", "danger")
+    return redirect(url_for('home'))
 
 @login_manager.user_loader
 def load_user(user_id):
@@ -86,15 +114,10 @@ def register():
     if current_user.is_authenticated:
         return redirect(url_for("home"))
 
-    form = RegistrationForm()  # Initialize the form
+    form = RegistrationForm()
     if form.validate_on_submit():
-        # Hash the password within the context of the route
         hashed_password = bcrypt.generate_password_hash(form.password.data).decode("utf-8")
-        user = User(
-            name=form.name.data,
-            email=form.email.data,
-            password=hashed_password,
-        )
+        user = User(name=form.name.data, email=form.email.data, password=hashed_password)
         db.session.add(user)
         db.session.commit()
         flash(f"Account created successfully for {form.name.data}", "success")
@@ -105,9 +128,9 @@ def register():
 @app.route("/login", methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
-        return redirect(url_for('home'))  # Redirect if already logged in
+        return redirect(url_for('home'))
 
-    form = LoginForm()  # Initialize the form
+    form = LoginForm()
     if form.validate_on_submit():
         user = User.query.filter_by(email=form.email.data).first()
         if user and bcrypt.check_password_hash(user.password, form.password.data):

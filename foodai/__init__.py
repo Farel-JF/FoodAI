@@ -4,13 +4,13 @@ from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
 from flask_migrate import Migrate
 from sqlalchemy import create_engine
-
+import os
 
 
 # Initialize the app
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:Farel275&@localhost/FoodAI'
-app.config['SECRET_KEY'] = 'your_secret_key'
+app.config['SECRET_KEY'] = 'Farel275&'
 
 # Initialize extensions
 db = SQLAlchemy(app)

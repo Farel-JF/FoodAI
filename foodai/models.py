@@ -5,7 +5,7 @@ from datetime import datetime
 from sqlalchemy import CheckConstraint
 from werkzeug.security import generate_password_hash, check_password_hash
 from markupsafe import Markup
-
+from foodai import db
 
 # Import db from your app's __init__.py
 from foodai import db
@@ -55,6 +55,7 @@ class Products(db.Model):
     order_items = db.relationship("Order_Items", back_populates="product")
     recommendations = db.relationship("Recommendations", back_populates="product")
     reviews = db.relationship("Reviews", back_populates="product")
+
 
 # Define the Diet Preferences model
 class Diet_Preferences(db.Model):
@@ -115,3 +116,19 @@ class Reviews(db.Model):
 
     user = db.relationship("User", back_populates="reviews")
     product = db.relationship("Products", back_populates="reviews")
+
+# foodai/models.py
+def calculate_total_price(cart_items):
+    """
+    Calculate the total price of items in the cart.
+
+    Args:
+        cart_items (list): A list of dictionaries, where each dictionary contains
+                        'price' and 'quantity' keys.
+
+    Returns:
+        float: The total price calculated.
+    """
+    total = sum(item['price'] * item['quantity'] for item in cart_items)
+    return total
+

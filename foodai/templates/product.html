@@ -2,44 +2,24 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ product.name }} - FoodAI</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>{{ product.name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"> <!-- Example for CSS -->
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="{{ url_for('home') }}">Home</a></li>
-                <li><a href="{{ url_for('about') }}">About</a></li>
-                <li><a href="{{ url_for('contact') }}">Contact</a></li>
-                <li><a href="{{ url_for('cart') }}">Cart</a></li>
-            </ul>
-        </nav>
-        <h1>{{ product.name }}</h1>
-    </header>
+    <h1>{{ product.name }}</h1>
+    <img src="{{ product.image_url }}" alt="{{ product.name }}">
+    <p>Description: {{ product.description }}</p>
+    <p>Price: €{{ product.price }}</p>
+    <p>Stock Quantity: {{ product.stock_quantity }}</p>
 
-    <main>
-        <div class="product-details">
-            <img src="{{ product.image_url }}" alt="{{ product.name }}" style="max-width: 300px; max-height: 300px;">
-            <div class="product-info">
-                <h2>Description</h2>
-                <p>{{ product.description }}</p>
-                <h3>Price: €{{ product.price }}</h3>
-                <h4>Stock Quantity: {{ product.stock_quantity }}</h4>
-
-                <form action="{{ url_for('add_to_cart') }}" method="POST">
-                    <input type="hidden" name="product_id" value="{{ product.product_id }}">
-                    <label for="quantity">Quantity:</label>
-                    <input type="number" name="quantity" id="quantity" value="1" min="1" max="{{ product.stock_quantity }}">
-                    <button type="submit">Add to Cart</button>
-                </form>
-            </div>
-        </div>
-    </main>
-
-    <footer>
-        <p>&copy; 2024 FoodAI. Tous droits réservés.</p>
-    </footer>
+    <form action="{{ url_for('add_to_cart') }}" method="POST">
+        <input type="hidden" name="product" value="{{ product.name }}">
+        <input type="hidden" name="price" value="{{ product.price }}">
+        <label for="quantity">Quantity:</label>
+        <input type="number" name="quantity" id="quantity" min="1" max="{{ product.stock_quantity }}" required>
+        <button type="submit">Add to Cart</button>
+    </form>
+    <a href="{{ url_for('home') }}">Back to Home</a> <!-- Example navigation -->
 </body>
 </html>
+ 

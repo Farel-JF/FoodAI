@@ -40,9 +40,9 @@
             <p>Nutrition Meets Technology for Your Fitness Success</p>
             <nav>
                 <ul>
-                    <li><a href="{{ url_for('home') }}">Products</a></li>
+                    <li><a href="{{ url_for('home') }}">Produits</a></li>
                     <li><a href="{{ url_for('ai_helper') }}">AI Helper</a></li>
-                    <li><a href="{{ url_for('home') }}">About Us</a></li>
+                    <li><a href="{{ url_for('home') }}">À Propos</a></li>
                     <li><a href="{{ url_for('contact') }}">Contact</a></li>
                 </ul>
             </nav>
@@ -68,7 +68,7 @@
                 </ul>
                 <h3>Prix</h3>
                 <p>€12.99 par repas</p>
-                <a href="{{ url_for('cart') }}" class="btn">Ajouter au Panier</a>
+                <button class="btn" onclick="addToCart('Healthy Meals', 12.99, 1)">Ajouter au Panier</button>
             </div>
         </div>
 
@@ -112,6 +112,23 @@
             <li>Téléphone : (+33) 0661516641</li>
         </ul>
     </footer>
+
+    <script>
+        // Fonction pour ajouter un article au panier
+        function addToCart(name, price, quantity) {
+            // Récupération du panier existant ou création d'un nouveau
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Ajout de l'article au panier
+            cart.push({ name: name, price: price, quantity: quantity });
+
+            // Stockage du panier mis à jour
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            // Message de confirmation
+            alert("L'article a été ajouté au panier !");
+        }
+    </script>
 
 </body>
 </html>

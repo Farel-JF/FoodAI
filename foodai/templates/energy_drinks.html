@@ -58,7 +58,32 @@
                 </ul>
                 <h3>Prix</h3>
                 <p>€1.99 par canette</p>
-                <a href="#" class="btn">Ajouter au Panier</a>
+                <a href="{{ url_for('cart') }}" class="btn" onclick="addToCart('Energy Drink', 1.99)">Ajouter au Panier</a>
+
+<script>
+    function addToCart(product, price) {
+        // Fetch existing cart or initialize a new one
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Check if item is already in cart
+        let item = cart.find(item => item.product === product);
+        if (item) {
+            // If item exists, increase the quantity
+            item.quantity += 1;
+        } else {
+            // If item doesn't exist, add it to the cart
+            cart.push({ product: product, price: price, quantity: 1 });
+        }
+
+        // Save updated cart to localStorage
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        // Redirect to cart page
+        window.location.href = 'cart.html';
+    }
+</script>
+
+
             </div>
         </div>
     </section>
@@ -73,5 +98,27 @@
         </ul>
     </footer>
 
+    <script>
+        function addToCart(product, price) {
+            // Fetch existing cart or initialize a new one
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Check if item is already in cart
+            let item = cart.find(item => item.product === product);
+            if (item) {
+                // If item exists, increase the quantity
+                item.quantity += 1;
+            } else {
+                // If item doesn't exist, add it to the cart
+                cart.push({ product: product, price: price, quantity: 1 });
+            }
+
+            // Save updated cart to localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            // Redirect to cart page
+            window.location.href = 'cart.html';
+        }
+    </script>
 </body>
 </html>

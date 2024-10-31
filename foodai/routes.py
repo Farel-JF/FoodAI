@@ -38,15 +38,44 @@ def energy_drinks():
 def ai_helper():
     return render_template('ai_helper.html')
 
-@app.route('/payment')
+app.secret_key = 'votre_cle_secrete'  # Remplacez par une clé secrète réelle
+
+@app.route('/payment', methods=['GET', 'POST'])
 def payment():
-    total_price = 29.99  # This should be the actual total from the cart
-    return render_template('payment.html', total_price=total_price)
+    # Obtenez le panier de la session
+    cart = session.get('cart', [])
+
+    # Calculez le prix total
+    total_price = sum(item['price'] * item['quantity'] for item in cart)
+
+    # Formatage du prix total en tant que chaîne avec deux décimales
+    total_price_formatted = "{:.2f}".format(total_price)
+
+    if request.method == 'POST':
+        # Gérer la logique de paiement ici
+        pass  # Remplacez par votre logique de traitement de paiement
+
+    # Rendre la page de paiement avec le prix total
+    return render_template('payment.html', total_price=total_price_formatted)
 
 
-@app.route('/cart')
-def cart():
-    return render_template('cart.html')
+@app.route('/add_to_cart', methods=['POST'])
+def add_to_cart():
+    item = {
+        'product': request.form['product'],
+        'price': float(request.form['price']),
+        'quantity': int(request.form['quantity'])
+    }
+
+    # Initialisez le panier si ce n'est pas encore fait
+    if 'cart' not in session:
+        session['cart'] = []
+
+    # Ajoutez l'item au panier
+    session['cart'].append(item)
+    session.modified = True  # Indiquez que la session a été modifiée
+
+    return redirect(url_for('home'))  # Redirigez vers la page d'accueil ou une autre page
 
 @login_manager.user_loader
 def load_user(user_id):

@@ -4,6 +4,8 @@ from flask_login import UserMixin
 from datetime import datetime
 from sqlalchemy import CheckConstraint
 from werkzeug.security import generate_password_hash, check_password_hash
+from markupsafe import Markup
+
 
 # Import db from your app's __init__.py
 from foodai import db

@@ -6,6 +6,7 @@ from sqlalchemy import CheckConstraint
 from werkzeug.security import generate_password_hash, check_password_hash
 from markupsafe import Markup
 from foodai import db
+from . import db
 
 # Import db from your app's __init__.py
 from foodai import db
